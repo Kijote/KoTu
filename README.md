@@ -1,4 +1,4 @@
-KoTu : Kohana Tunning
+KoTu : Kohana Tuning
 =====================
 
-The basic idea about Kohana Tunning is to create a base Kohana Framework environment to start deploying a wide range web apps.
+The basic idea about Kohana Tuning is to create a base Kohana Framework environment to start deploying a wide range web apps.
