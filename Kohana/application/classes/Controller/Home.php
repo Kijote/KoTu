@@ -11,8 +11,18 @@ class Controller_Home extends Controller {
                                         'styles.css',
                                         ));
         
-        
         $assets = array($js_assets->make(), $css_assets->make());
+		
+		$app = Kohana::$config->load('application');
+		
+		Email::easy_send(array('yo@kijote.com.ar', 'yo+kapito@kijote.com.ar'),
+						 'Email Test',
+						 ":application (:description) v:version has sent this mail from :account. It's only a test.\n\nBye!",
+						 array(':application' => $app->get('name'),
+							   ':version' => implode('.', $app->get('version')),
+							   ':description' => $app->get('description'),
+							   ':account' => $app->get('email'))
+						);
 		
 		$this->response->body(__('Hello, world!') . print_r($assets, true));
 	}
