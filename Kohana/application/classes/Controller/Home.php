@@ -15,7 +15,7 @@ class Controller_Home extends Controller {
 		
 		$app = Kohana::$config->load('application');
 		
-		Email::easy_send(array('yo@kijote.com.ar', 'yo+kapito@kijote.com.ar'),
+		Email::application_send(array('to' => 'yo@kijote.com.ar', 'cc' => 'yo+kapito@kijote.com.ar'),
 						 'Email Test',
 						 ":application (:description) v:version has sent this mail from :account. It's only a test.\n\nBye!",
 						 array(':application' => $app->get('name'),

@@ -142,28 +142,13 @@ class Email {
 		return Email::$mail->send($message);
 	}
 
-	public static function easy_send($to, $subject, $message, $params = array()){
-		$result = false;
-        
-        $mailer = Email::connect();
-        // Create complex Swift_Message object stored in $message
-        // MUST PASS ALL PARAMS AS REFS
-		$config = Kohana::$config->load('email');
-        $from = $config['options']['username'];
-        $app = Kohana::$config->load('application');
-		
-        $body = __($message, $params);
-        
-        $message_swift = Swift_Message::newInstance($subject, $body)
-                ->setFrom(array($from => $app['name']))
-                ->setTo(array_map('trim', is_string($to) ? explode(',', $to) : (array) $to));
-                
-        if($mailer->send($message_swift)) {
-           $result = true;
-        } else {
-           $result = false;
-        }
-        
-        return $result;
+	public static function application_send($to, $subject, $message, $params = array(), $html = false){
+		$app = Kohana::$config->load('application');
+		return( Email::send($to,
+					array($app->get('email') => $app->get('name')),
+					__($subject, $params),
+					__($message, $params),
+					$html
+					) );
 	}
 } // End email
