@@ -11,21 +11,22 @@
 
 */
 return array(
-	'base_url' => array('js' => 'public/js/',
-						'css' => 'public/css/'),
+	'base_url' => array(
+			'js' => 'public/js/',
+			'css' => 'public/css/'),
 	'dependencies' => array(
-							// js dependencies
-                            'jquery-ui.js' => array('jquery.js'),
-							'init.js' => array('jquery.js', 'bootstrap.js'),
-							
-							// css dependencies
-							'styles.css' => array('bootstrap.css', 'jquery-ui.css'),
-						 ),
+			// js dependencies
+                        'jquery-ui.js' => array('jquery.js'),
+			'init.js' => array('jquery.js', 'bootstrap.js'),
+			// css dependencies
+			'styles.css' => array('bootstrap.css', 'jquery-ui.css'),
+			),
 	'custom_config' => array(
-							 'styles.css' => array('media' => 'screen'),
-							 ),
-	'custom_dirs' => array('bootstrap.js' => '../bootstrap/js/',
-						   'bootstrap.css' => '../bootstrap/css/',
-						   ),
+			'styles.css' => array('media' => 'screen'),
+			),
+	'custom_dirs' => array(
+			'bootstrap.js' => '../bootstrap/js/',
+			'bootstrap.css' => '../bootstrap/css/',
+			),
 	'by_page' => array('' => array()),
 );
