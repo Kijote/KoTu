@@ -4,6 +4,8 @@ class Controller_Home extends Controller {
 
 	public function action_index()
 	{
+		$a = this_is_an_undefined_function();
+		
 		$js_assets = new Asset_JS(array('init.js'
                                         ));
         

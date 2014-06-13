@@ -131,6 +131,7 @@ Kohana::modules(array(
 	'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	'asset'		=> MODPATH.'asset',		// Asset tree resolver module
 	'kohana-email' 	=> MODPATH.'kohana-email', 	 // Email module
+	'error-catcher' => MODPATH.'error-catcher', // Error catcher module
 	));
 	
 /**
