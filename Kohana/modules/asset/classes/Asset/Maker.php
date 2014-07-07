@@ -40,11 +40,11 @@ class Asset_Maker{
 		}
 		
 		$maked_assets = array();
-		$config = '';
 		foreach($assets as $asset){
 			if(in_array($asset, array_keys($this->config->custom_dirs)))
 				$asset = $this->config->custom_dirs[$asset] . $asset;
 			
+			$config = '';
 			if(in_array($asset, array_keys($this->config->custom_config))){
 				foreach ($this->config->custom_config[$asset] as $key => $value){
 					$config .= str_replace(array('[key]', '[value]'), array($key, $value), $this->template_config);
