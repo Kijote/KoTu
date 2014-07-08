@@ -117,23 +117,31 @@ Kohana::$log->attach(new Log_File(APPPATH.'logs'));
 Kohana::$config->attach(new Config_File);
 
 /**
+ *	The Cookie salt
+ */
+Cookie::$salt = 'foobar';
+
+/**
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
 	'auth'       => MODPATH.'auth',       // Basic authentication
+	'user'       => MODPATH.'user',       // Useradmin module
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	// 'database'   => MODPATH.'database',   // Database access
+	'database'   => MODPATH.'database',   // Database access
 	'image'      => MODPATH.'image',      // Image manipulation
 	// 'minion'     => MODPATH.'minion',     // CLI Tasks
 	'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+	'pagination'        => MODPATH.'pagination',        // Pagination
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	'asset'		=> MODPATH.'asset',		// Asset tree resolver module
 	'kohana-email' 	=> MODPATH.'kohana-email', 	 // Email module
-	'error-catcher' => MODPATH.'error-catcher', // Error catcher module
+//	'error-catcher' => MODPATH.'error-catcher', // Error catcher module
 	));
-	
+
+
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
