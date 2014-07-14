@@ -7,7 +7,7 @@
  * @copyright  (c) 2007-2009 Kohana Team
  * @license    http://kohanaphp.com/license.html
  */
-class Model_Auth_Role extends ORM {
+class Model_Auth_Role extends Formo_ORM {
 
 	// Relationships
 	protected $_has_many = array(

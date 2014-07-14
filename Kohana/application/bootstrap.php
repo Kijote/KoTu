@@ -125,6 +125,7 @@ Cookie::$salt = 'foobar';
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
+	'kohana-formo'	=> MODPATH.'kohana-formo',	// Form module
 	'auth'       => MODPATH.'auth',       // Basic authentication
 	'user'       => MODPATH.'user',       // Useradmin module
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
@@ -140,7 +141,6 @@ Kohana::modules(array(
 	'kohana-email' 	=> MODPATH.'kohana-email', 	 // Email module
 //	'error-catcher' => MODPATH.'error-catcher', // Error catcher module
 	));
-
 
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
